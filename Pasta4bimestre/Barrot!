@@ -1,4 +1,29 @@
+#----------------- Função para executar --------------------
 
+def menu():
+  while True:
+    print("=" * 40)
+    print("🤖 Quiz Arduino 💡")
+    print("=" * 40)
+    print("1. 🚀 Responder Quiz")
+    print("2. 📜 Exibir Regras")
+    print("3. 🚪 Encerrar Programa")
+    print("-" * 40)
+
+    escolha = input("Selecione uma opção (1, 2 ou 3): ").strip()
+
+    if escolha == '1':
+      embaralhar()
+    elif escolha == '2':
+      regras()
+      
+    elif escolha == '3':
+      print("\n👋 Obrigado por jogar!")
+      time.sleep(2)
+      break
+    else:
+      print("\n Opção inválida. Tente novamente.")
+      time.sleep(1.5)
 
 pontos_por_acerto = 10
 
