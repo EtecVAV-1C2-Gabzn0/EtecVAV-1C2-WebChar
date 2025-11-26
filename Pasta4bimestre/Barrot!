@@ -1,3 +1,556 @@
+perguntas = [
+  {
+    "pergunta":"O que significa o termo 'Open-Source' no contexto do Arduino?",
+    "alternativas_base": [
+      "Que o software de programação é pago",
+      "Que o hardware é de uso exclusivo para fins acadêmicos" ,
+      "Que a placa deve ser programada apenas em linguagem C" ,
+      "Que o hardware e o software são abertos e os projeto estão disponíveis publicamente para estudo e modificação" ,
+      "Que só pode ser comprado em lojas específica",
+    ],
+    "resposta_correta": "Que o hardware e o software são abertos e os projeto estão disponíveis publicamente para estudo e modificação"
+  },
+  {
+    "pergunta":"Qual é a principal motivação por trás da criação do projeto Arduino em Ivrea, Itália, no início dos anos 2000?",
+    "alternativas_base": [
+      "Criar a placa microcontroladora mais rápida do mercado",
+      "Desenvolver um software de simulação de circuitos",
+      "Fornecer uma ferramenta de prototipagem eletrônica de baixo custo e fácil utilização para estudantes e artistas sem experiência em eletrônica",
+      "Padronizar o uso da linguagem Assembly em microcontroladores",
+      "Competir com a Raspberry Pi no mercado de computação embarcada"
+    ],
+    "resposta_correta": "Fornecer uma ferramenta de prototipagem eletrônica de baixo custo e fácil utilização para estudantes e artistas sem experiência em eletrônica"
+  },
+  {
+  "pergunta":"Qual placa Arduino é conhecida por possuir um microcontrolador mais potente (ATmega2560) e um maior número de pinos digitais e analógicos, sendo ideal para projetos mais complexos? ",
+  "alternativas_base": [
+      "Arduino Uno R3",
+      "Arduino Leonardo",
+      "Arduino Mega 2560",
+      "Arduino Micro",
+      "Arduino Zero"
+  ],
+  "resposta_correta": "Arduino Mega 2560"
+  },
+  {
+  "pergunta":"Qual placa Arduino é famosa por seu tamanho reduzido e a capacidade de ser facilmente embutida em protótipos compactos, mantendo a funcionalidade do Uno, mas geralmente sem o conector de alimentação externo? ",
+    "alternativas_base": [
+      "Arduino Uno R3",
+      "Arduino Due",
+      "Arduino Mega 2560",
+      "Arduino Nano",
+      "Arduino Leonardo"
+    ],
+    "resposta_correta": "Arduino Nano"
+  },
+  {
+  "pergunta":"Qual é a principal diferença entre o Arduino Uno e as placas mais recentes da família Arduino Due/Zero, no que diz respeito à arquitetura do microcontrolador?",
+  "alternativas_base": [
+      "O Uno usa um processador de 64 bits, enquanto as demais usam 8 bits",
+      "O Uno utiliza apenas comunicação serial, e as outras usam Wi-Fi",
+      "O Uno opera a 3.3V, e as demais operam a 5V",
+      "O Uno utiliza um microcontrolador AVR de 8 bits, enquanto o Due/Zero utiliza microcontroladores ARM de 32 bits.",
+      "O Uno possui memória Flash muito maior que o Due/Zero."
+    ],
+    "resposta_correta": "O Uno utiliza um microcontrolador AVR de 8 bits, enquanto o Due/Zero utiliza microcontroladores ARM de 32 bits."
+  },
+  {
+  "pergunta":"Qual microcontrolador é tipicamente usado na placa Arduino Uno R3?",
+    "alternativas_base": [
+      "ESP32",
+      "PIC16F877A",
+      "ATmega328P",
+      "ARM Cortex-M0+",
+      "ATtiny85"
+    ],
+    "resposta_correta": "ATmega328P"
+  },
+  {
+  "pergunta":"Qual componente é essencial na placa Arduino para converter a energia externa (ex: fonte de 9V) em uma tensão utilizável (5V) e estável para o microcontrolador e a lógica da placa? ",
+    "alternativas_base": [
+      "Diodo de proteção",
+      "Cristal oscilador",
+      "Regulador de tensão",
+      "Memória Flash",
+      "Conversor Analógico-Digital (ADC)"
+    ],
+    "resposta_correta": "Regulador de tensão"
+  },
+  {
+  "pergunta":"Qual é o componente que armazena o código do programa (sketch) no microcontrolador do Arduino, mesmo após a placa ser desligada? ",
+    "alternativas_base": [  
+      "SRAM (Static RAM)",
+      "EEPROM",
+      "Flash Memory",
+      "Registradores",
+      "Cache L1"
+    ],
+    "resposta_correta": "Flash Memory"
+  },
+  {
+  "pergunta":"Qual é o nome da área de memória volátil usada para armazenar dados temporários e variáveis globais/locais durante a execução do programa, sendo perdida ao desligar a placa? ",
+    "alternativas_base": [
+    "Flash Memory",
+    "EEPROM",
+    "Bootloader",
+    "SRAM (Static RAM)",
+    "Cache"
+    ],
+    "resposta_correta": "SRAM (Static RAM)"
+  },
+  {
+  "pergunta":"Qual é o papel do 'Bootloader' em uma placa Arduino?",
+    "alternativas_base": [
+    "É o código do usuário que é executado no loop().",
+    "É o driver de comunicação serial para o computador.",
+    "É um pequeno programa pré-instalado que permite carregar o código do usuário para a memória Flash via porta serial (USB), sem a necessidade de um programador externo.",
+    "É o chip principal que executa todas as instruções.",
+    "É a biblioteca padrão para controle de display LCD."
+    ],
+    "resposta_correta": "É um pequeno programa pré-instalado que permite carregar o código do usuário para a memória Flash via porta serial (USB), sem a necessidade de um programador externo."
+  },
+  {
+  "pergunta":"Qual é a principal função do pino 'VIN' em uma placa Arduino?",
+    "alternativas_base": [
+    "Saída de 5V regulada.",
+    "Entrada de sinal digital.",
+    "Entrada para alimentação externa não regulada (geralmente acima de 7V).",
+    "Saída de 3.3V regulada.",
+    "Pino de aterramento (GND)."
+    ],
+    "resposta_correta": "Entrada para alimentação externa não regulada (geralmente acima de 7V)."
+  },
+  {
+  "pergunta":"A maioria das placas Arduino Uno opera com qual nível de tensão lógica para seus pinos digitais?",
+    "alternativas_base": [
+    "12V",
+    "9V",
+    "5V",
+    "3.3V",
+    "1.8V"
+    ],
+    "resposta_correta": "5V"
+  },
+  {
+  "pergunta":"As entradas analógicas do Arduino Uno possuem um Conversor Analógico-Digital (ADC) de quantos bits, por padrão?" ,
+    "alternativas_base": [
+    "8 bits",
+    "10 bits",
+    "12 bits",
+    "16 bits",
+    "6 bits"
+    ],
+    "resposta_correta": "10 bits"
+  },
+  {
+  "pergunta":"Ao usar a função analogRead() em um Arduino Uno, qual é a faixa de valores inteiros retornados que representam a tensão de 0V a 5V (por padrão)?",
+    "alternativas_base": [
+    "0 a 255",
+    "0 a 511",
+    "0 a 999",
+    "0 a 1023",
+    "0 a 4095"
+    ],
+    "resposta_correta": "0 a 1023"
+  },
+  {
+  "pergunta":"O que é PWM (Pulse Width Modulation) no contexto do Arduino?",
+    "alternativas_base": [
+    "Uma forma de comunicação serial de alta velocidade.",
+    "Uma técnica para ler entradas analógicas mais rapidamente.",
+    "Uma técnica usada para simular saídas analógicas, variando a largura do pulso digital.",
+    "Um método de proteção contra sobrecarga de corrente.",
+    "Uma forma de configurar a memória EEPROM."
+    ],
+    "resposta_correta": "Uma técnica usada para simular saídas analógicas, variando a largura do pulso digital."
+  },
+  {
+  "pergunta":"Qual das seguintes funções é obrigatória e executada apenas uma vez no início de um programa Arduino? ",
+    "alternativas_base": [
+    "main()",
+    "Serial.begin()",
+    "setup()",
+    "loop_start()",
+    "initialize()"
+    ],
+    "resposta_correta": "setup()"
+  },
+  {
+  "pergunta":"Qual das seguintes funções é executada repetidamente em um loop contínuo, após a função setup(), e é onde a lógica principal do programa reside?",
+    "alternativas_base": [
+    "start()",
+    "repeat()",
+    "loop()",
+    "while(1)",
+    "main_cycle()"
+    ],
+    "resposta_correta": "loop()"
+  },
+  {
+  "pergunta":"Qual é o propósito da declaração de variáveis como global (fora de setup() e loop())?",
+    "alternativas_base": [
+    "Torná-las mais rápidas de acessar.",
+    "Reservar espaço para elas na memória Flash.",
+    "Permitir que sejam acessadas e modificadas por qualquer função no sketch.",
+    "Torná-las somente leitura (const).",
+    "Forçá-las a serem armazenadas na EEPROM."
+    ],
+    "resposta_correta": "Permitir que sejam acessadas e modificadas por qualquer função no sketch."
+  },
+  {
+  "pergunta":"Qual diretiva do pré-processador C++ é usada para incluir bibliotecas (como Servo.h ou Wire.h) no seu sketch do Arduino, concedendo acesso a novas funcionalidades?",
+    "alternativas_base": [
+    "#define",
+    "#pragma",
+    "#if",
+    "#import",
+    "#include"
+    ],
+    "resposta_correta": "#include"
+  },
+  {
+  "pergunta":"Qual linguagem de programação é a base da IDE do Arduino?" ,
+    "alternativas_base": [
+    "Python",
+    "Java",
+    "C/C++ (com bibliotecas e funções simplificadas)",
+    "Assembly",
+    "Basic"
+    ],
+    "resposta_correta": "C/C++ (com bibliotecas e funções simplificadas)"
+  },
+  {
+  "pergunta":"Na função pinMode(pin, mode), o que o argumento mode define?",
+    "alternativas_base": [
+    "O tipo de componente conectado ao pino.",
+    "A velocidade de clock do microcontrolador.",
+    "Se o pino será configurado como entrada (INPUT) ou saída (OUTPUT). ",
+    "O valor de tensão a ser aplicado ao pino.",
+    "A frequência do sinal PWM."
+    ],
+    "resposta_correta": "Se o pino será configurado como entrada (INPUT) ou saída (OUTPUT). "
+  },
+  {
+  "pergunta":"Qual função é usada para ler o valor de um pino digital configurado como INPUT?" ,
+    "alternativas_base": [
+    "analogRead()",
+    "digitalWrite()",
+    "readPin()",
+    "inputRead()",
+    "digitalRead()"
+    ],
+    "resposta_correta": "digitalRead()"
+  },
+  {
+  "pergunta":"Qual função é usada para ler um valor de tensão em um pino analógico (A0 a A5 no Uno)?",
+    "alternativas_base": [
+    "digitalRead()",
+    "serialRead()",
+    "analogRead()",
+    "readAnalog()",
+    "pinRead()"
+    ],
+    "resposta_correta": "analogRead()"
+  },
+  {
+  "pergunta":"Qual é a unidade de tempo da função delay() no Arduino?" ,
+    "alternativas_base": [
+    "Segundos",
+    "Microsegundos",
+    "Nanosegundos",
+    "Milissegundos",
+    "Minutos"
+    ],
+    "resposta_correta": "Milissegundos"
+  },
+  {
+  "pergunta":"Para que serve a função map() no Arduino?" ,
+    "alternativas_base": [
+    "Desenhar um mapa no display.",
+    "Mapear pinos digitais para analógicos.",
+    "Reescalar um número de uma faixa de valores para outra (ex: de 0-1023 para 0-255).",
+    "Mudar a frequência de clock do microcontrolador.",
+    "Definir um pino como entrada ou saída."
+    ],
+    "resposta_correta": "Reescalar um número de uma faixa de valores para outra (ex: de 0-1023 para 0-255)."
+  },
+  {
+  "pergunta":"O que o comando const int LED_PIN = 13; faz?",
+    "alternativas_base": [
+    "Define um pino como saída.",
+    "Define o valor inicial da variável LED_PIN.",
+    "Cria uma variável que armazena o número 13 e impede que esse número seja alterado durante a execução do programa.",
+    "Inicia a comunicação serial no pino 13.",
+    "Aloca dinamicamente memória na SRAM."
+    ],
+    "resposta_correta": "Cria uma variável que armazena o número 13 e impede que esse número seja alterado durante a execução do programa."
+  },
+  {
+  "pergunta":"Qual função é usada para pausar a execução do programa por um número de microsegundos?",
+    "alternativas_base": [
+    "delay()",
+    "millis()",
+    "delayMilliseconds()",
+    "pause()",
+    "delayMicroseconds()"
+    ],
+    "resposta_correta": "delayMicroseconds()"
+  },
+  {
+  "pergunta":"O que o 'Serial Monitor' na IDE do Arduino permite fazer?",
+    "alternativas_base": [
+    "Gravar o código na placa.",
+    "Medir a tensão de entrada.",
+    "Uma ferramenta de depuração que permite a comunicação bidirecional de texto entre o computador e o Arduino via porta serial. ",
+    "Instalar bibliotecas.",
+    "Fazer a leitura de pinos I²C."
+    ],
+    "resposta_correta": "Uma ferramenta de depuração que permite a comunicação bidirecional de texto entre o computador e o Arduino via porta serial. "
+  },
+  {
+  "pergunta":"O que é um 'Shield' no ecossistema Arduino?",
+    "alternativas_base": [
+    "Uma capa protetora para a placa.",
+    "Um tipo de resistor usado para proteção.",
+    "Uma placa de expansão que se encaixa no Arduino para adicionar funcionalidades (ex: Wi-Fi, Ethernet, controle de motor). ",
+    "O ambiente de desenvolvimento integrado (IDE).",
+    "O bootloader do microcontrolador."
+    ],
+    "resposta_correta": "Uma placa de expansão que se encaixa no Arduino para adicionar funcionalidades (ex: Wi-Fi, Ethernet, controle de motor). "
+  },
+  {
+  "pergunta":"Qual tipo de atuador é geralmente controlado pelo Arduino usando a função analogWrite() (PWM) e um transistor, devido à alta demanda de corrente?",
+    "alternativas_base": [
+    "Servo motor",
+    "Display LCD",
+    "Motor DC",
+    "Buzzer passivo",
+    "LED simples"
+    ],
+    "resposta_correta": "Motor DC"
+  },
+  {
+  "pergunta":"Qual sensor é mais adequado para medir a distância usando o princípio de emissão e recepção de ondas sonoras de alta frequência?",
+    "alternativas_base": [
+    "Sensor de temperatura NTC",
+    "Sensor de luz LDR",
+    "Sensor de gás MQ-2",
+    "Sensor ultrassônico (ex: HC-SR04)",
+    "Sensor de umidade do solo"
+    ],
+    "resposta_correta": "Sensor ultrassônico (ex: HC-SR04)"
+  },
+  {
+  "pergunta":"Qual a função de um driver (ex: L298N) ao conectar um motor DC grande ou de passo ao Arduino?" ,
+    "alternativas_base": [
+    "Regular a velocidade do motor usando a biblioteca Servo.h.",
+    "Converter o sinal PWM em um sinal analógico puro.",
+    "Fornecer a alta corrente e tensão que o motor requer, agindo como uma interface de potência para proteger o microcontrolador. ",
+    "Atuar como um sensor de feedback de posição.",
+    "Transformar a energia da placa para 3.3V."
+    ],
+    "resposta_correta": "Fornecer a alta corrente e tensão que o motor requer, agindo como uma interface de potência para proteger o microcontrolador. "
+  },
+  {
+  "pergunta":"O que um Ethernet Shield adiciona como funcionalidade ao Arduino?" ,
+    "alternativas_base": [  
+    "Conexão Bluetooth de baixa energia.",
+    "A capacidade de gravar o código via Wi-Fi.",
+    "A capacidade de conectar a uma rede cabeada (LAN/Internet) usando um cabo RJ45. ",
+    "Sensores de movimento inercial (IMU).",
+    "Expansão do número de portas analógicas."
+    ],
+    "resposta_correta": "A capacidade de conectar a uma rede cabeada (LAN/Internet) usando um cabo RJ45. "
+  },
+  {
+  "pergunta":"Qual biblioteca padrão do Arduino é comumente utilizada para gerenciar e controlar a posição de servomotores?" ,
+    "alternativas_base": [  
+    "Stepper.h",
+    "MotorControl.h",
+    "SoftwareSerial.h",
+    "Wire.h",
+    "Servo.h"
+    ],
+    "resposta_correta": "Servo.h"
+  },
+  {
+  "pergunta":"Qual função é usada para inicializar a comunicação serial no Arduino, configurando a taxa de transmissão em bits por segundo?" ,
+    "alternativas_base": [  
+    "Serial.start()",
+    "Serial.connect()",
+    "Serial.begin(velocidade)",
+    "Serial.rate(baud)",
+    "beginSerial(velocidade)"
+    ],
+    "resposta_correta": "Serial.begin(velocidade)"
+  },
+  {
+  "pergunta":"Qual protocolo de comunicação é mais adequado para a transmissão de dados em distâncias curtas, onde um único dispositivo 'Mestre' se comunica com múltiplos dispositivos 'Escravos' em apenas dois fios (SDA e SCL)?",
+    "alternativas_base": [  
+    "UART (Serial)",
+    "SPI",
+    "I2C (Inter-Integrated Circuit)",
+    "CAN Bus",
+    "Ethernet"
+    ],
+    "resposta_correta": "I2C (Inter-Integrated Circuit)"
+  },
+  {
+  "pergunta":"No protocolo SPI (Serial Peripheral Interface), qual pino é usado para que o dispositivo Mestre selecione qual dispositivo Escravo (Chip Select) deve se comunicar? ",
+    "alternativas_base": [  
+    "MISO",
+    "MOSI",
+    "SCLK",
+    "GND",
+    "SS (Slave Select)"
+    ],
+    "resposta_correta": "SS (Slave Select)"
+  },
+  {
+  "pergunta":"Qual dos seguintes módulos de comunicação sem fio é mais adequado para projetos que exigem baixo consumo de energia e comunicação ponto a ponto de curta distância, como conectar a um smartphone?",
+    "alternativas_base": [  
+    "Ethernet",
+    "Módulo GSM",
+    "Bluetooth Low Energy (BLE)",
+    "Módulo LoRa",
+    "Wi-Fi (ex: ESP8266)"
+    ],
+    "resposta_correta": "Bluetooth Low Energy (BLE)"
+  },
+  {
+  "pergunta":"O que é necessário para permitir que um Arduino (sem um módulo embutido como o ESP32) se comunique via Wi-Fi e se conecte à Internet?" ,
+    "alternativas_base": [  
+    "Apenas a biblioteca SoftwareSerial.",
+    "Apenas a função Serial.begin(115200).",
+    "Um módulo ou shield Wi-Fi externo, como o ESP8266 ou um WiFi Shield.",
+    "Um driver de motor de alta potência.",
+    "Um conversor de tensão de 3.3V para 5V."
+    ],
+    "resposta_correta": "Um módulo ou shield Wi-Fi externo, como o ESP8266 ou um WiFi Shield."
+  },
+  {
+  "pergunta":"Qual biblioteca padrão do Arduino é usada para implementar a comunicação I²C (Inter-Integrated Circuit)?",
+    "alternativas_base": [  
+    "SPI.h",
+    "SoftwareSerial.h",
+    "Ethernet.h",
+    "Wire.h",
+    "EEPROM.h"
+    ],
+    "resposta_correta": "Wire.h"
+  },
+  {
+  "pergunta":"Qual componente é essencialmente necessário para limitar a corrente e proteger um LED quando ligado a um pino digital do Arduino?",
+    "alternativas_base": [  
+    "Diodo Zener",
+    "Capacitor",
+    "Transistor",
+    "Resistor",
+    "Indutor"
+    ],
+    "resposta_correta": "Resistor"
+  },
+  {
+  "pergunta":"Qual é a corrente máxima (em miliamperes - mA) que um único pino de saída digital (OUTPUT) do microcontrolador ATmega328P (Arduino Uno) pode fornecer ou receber com segurança, sem danificar o chip? ",
+    "alternativas_base": [  
+    "100 mA",
+    "50 mA",
+    "20 mA",
+    "5 mA",
+    "150 mA"
+    ],
+    "resposta_correta": "20 mA"
+  },
+  {
+  "pergunta":"Qual é o principal risco ao aplicar uma tensão de 12V diretamente a um pino digital de I/O configurado como INPUT, em uma placa de 5V (como o Uno)?",
+    "alternativas_base": [  
+    "O Arduino irá ler o valor como LOW.",
+    "O microcontrolador irá configurar o pino automaticamente para 12V.",
+    "Danos permanentes ao microcontrolador devido à sobretensão, excedendo o limite de 5V.",
+    "O programa irá falhar e reiniciar a placa.",
+    "O pino irá atuar como um pino de alimentação (VIN)."
+    ],
+    "resposta_correta": "Danos permanentes ao microcontrolador devido à sobretensão, excedendo o limite de 5V."
+  },
+  {
+  "pergunta":"Qual é o principal objetivo de usar um protoboard (placa de ensaio) para montar circuitos antes da soldagem?",
+    "alternativas_base": [  
+    "Aumentar a velocidade de processamento do Arduino.",
+    "Reduzir o consumo de energia dos componentes.",
+    "Permitir a montagem, o teste e a modificação rápida e não permanente dos circuitos. ",
+    "Proteger a placa Arduino contra picos de tensão.",
+    "Converter o sinal digital em analógico."
+    ],
+    "resposta_correta": "Permitir a montagem, o teste e a modificação rápida e não permanente dos circuitos. "
+  },
+  {
+  "pergunta":"Qual é a função do diodo de roda livre (flyback diode ou freewheeling diode) em paralelo com a bobina de um relé ou motor?",
+    "alternativas_base": [  
+    "Aumentar a tensão de entrada.",
+    "Melhorar a comunicação serial.",
+    "Proteger o transistor ou o circuito de controle contra o pico de tensão indutiva gerado pela bobina quando desenergizada. ",
+    "Reduzir a corrente para o componente.",
+    "Regular a tensão de 5V."
+    ],
+    "resposta_correta": "Proteger o transistor ou o circuito de controle contra o pico de tensão indutiva gerado pela bobina quando desenergizada. "
+  },
+  {
+  "pergunta":"Qual é a aplicação prática mais comum para um sensor de umidade do solo conectado a um Arduino?",
+    "alternativas_base": [  
+    "Medir a pressão atmosférica.",
+    "Acionar uma luz de emergência.",
+    "Criação de um sistema de irrigação automatizado. ",
+    "Controlar a velocidade de um robô.",
+    "Monitorar a temperatura ambiente."
+    ],
+    "resposta_correta": "Criação de um sistema de irrigação automatizado. "
+  },
+  {
+  "pergunta":"Qual é a função de um Arduino em um sistema de automação residencial que controla as luzes com base na luminosidade externa (usando um LDR - sensor de luz)?",
+    "alternativas_base": [  
+    "Aumentar a corrente de alimentação da lâmpada.",
+    "Processar o valor do sensor LDR (entrada analógia) e tomar uma decisão (ligar/desligar o relé, atuador) baseada nesse valor. ",
+    "Conectar-se à internet para baixar atualizações de firmware.",
+    "Atuar apenas como um display para mostrar a hora.",
+    "Gerar o sinal PWM para controlar a cor da luz."
+    ],
+    "resposta_correta": "Processar o valor do sensor LDR (entrada analógia) e tomar uma decisão (ligar/desligar o relé, atuador) baseada nesse valor. "
+  },
+  {
+  "pergunta":"Em um projeto de robótica móvel, o Arduino atua primariamente como?",
+    "alternativas_base": [  
+    "Fonte de alimentação para todos os componentes.",
+    "O cérebro que lê sensores (ex: distânca), processa a lógica de controle e envia comandos para os atuadores (motores).",
+    "Um módulo de GPS para rastrear a localização do robô.",
+    "Uma bateria de longa duração.",
+    "Um sistema de visão computacional."
+    ],
+    "resposta_correta": "O cérebro que lê sensores (ex: distânca), processa a lógica de controle e envia comandos para os atuadores (motores)."
+  },
+  {
+  "pergunta":"Qual tipo de projeto é um excelente caso de uso para um Arduino Nano? ",
+    "alternativas_base": [  
+    "Servidor de jogos de alto desempenho.",
+    "Controlar um grande painel de LED com milhares de lâmpadas.",
+    "Dispositivos vestíveis (wearables), mini-drones ou pequenos brinquedos devido ao seu tamanho e peso reduzidos. ",
+    "Controle de uma rede industrial complexa via CAN Bus.",
+    "Um sistema de CFTV com múltiplas câmeras."
+    ],
+    "resposta_correta": "Dispositivos vestíveis (wearables), mini-drones ou pequenos brinquedos devido ao seu tamanho e peso reduzidos. "
+  },
+  {
+  "pergunta":"Qual é o objetivo de um projeto de medição de temperatura e umidade com Arduino para um criadouro de animais, utilizando um display LCD?",
+    "alternativas_base": [  
+    "Apenas calcular a velocidade do vento.",
+    "Prever terremotos e tsunamis.",
+    "Monitorar e garantir condições climáticas ideais (temperatura/umidade) para o bem-estar dos animais, exibindo os dados em tempo real. ",
+    "Controlar a comunicação I²C com um satélite.",
+    "Gerar aleatoriamente números para um jogo de loteria."
+    ],
+    "resposta_correta": "Monitorar e garantir condições climáticas ideais (temperatura/umidade) para o bem-estar dos animais, exibindo os dados em tempo real. "
+  }
+]
+
 #----------------- Função para verificar -------------------
 
 def verificar(mapa_alternativas, altCerta,opcoes):
