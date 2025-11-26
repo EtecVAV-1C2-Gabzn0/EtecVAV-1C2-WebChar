@@ -1,3 +1,26 @@
+#----------------- Função para verificar -------------------
+
+def verificar(mapa_alternativas, altCerta,opcoes):
+  
+  while True:
+    resposta_jogador_letra = input("\nSua resposta (A/B/C/D/E): ").strip().upper()
+    if resposta_jogador_letra in opcoes:
+      break
+    else:
+      print("Por favor, digite A, B, C, D ou E.")
+  
+  altEscolhida = mapa_alternativas.get(resposta_jogador_letra)
+  if altEscolhida == altCerta:  
+    print(f'\n✅ Correto! Você ganhou {pontos_por_acerto} pontos.')
+    time.sleep(1.5)
+    return pontos_por_acerto
+  else:
+    print(f'\n❌ ERRADO! A resposta correta era {altCerta}')
+    time.sleep(1.5)
+    return 0
+
+#----------------- Função para exibir resultado -----------
+
 def resultado(pontuacao_final, total_questoes):
 
   print("=" * 40)
