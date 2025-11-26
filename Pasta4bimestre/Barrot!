@@ -1,3 +1,7 @@
+
+
+pontos_por_acerto = 10
+
 perguntas = [
   {
     "pergunta":"O que significa o termo 'Open-Source' no contexto do Arduino?",
