@@ -1,0 +1,17 @@
+def resultado(pontuacao_final, total_questoes):
+
+  print("=" * 40)
+  print("🏆 RESULTADO FINAL 🏆")
+  print("=" * 40)
+
+  total_questoes = total_questoes
+  acertos = pontuacao_final // pontos_por_acerto
+  pontuacao_maxima = total_questoes * pontos_por_acerto
+  percentual = (acertos / total_questoes) * 100 if total_questoes > 0 else 0
+
+  print(f"Total de Questões: {total_questoes}")
+  print(f"Acertos: {acertos} de {total_questoes}")
+  print(f"Pontuação Final: {pontuacao_final} de {pontuacao_maxima}")
+  print(f"Percentual de Acerto: {percentual:.2f}%")
+
+  input("\nPressione ENTER para voltar ao Menu Principal...")
